@@ -34,6 +34,14 @@ class MSudi extends CI_Model
 
     }
 
+    function SearchData($match)
+	{
+		$this->db->select('*');
+		$this->db->from('tbl_mahasiswa');
+		$this->db->like('nama', $match);
+		return $this->db->get();
+	}
+
     function check_login($table, $field1, $field2)
     {
         $this->db->select('*');
